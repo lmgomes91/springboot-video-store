@@ -6,8 +6,7 @@
     and not the application by self
 
 ## Documentation
-    After run the project, the documentation can be found [here](http://localhost:8080/swagger-ui.html) as 
-    swagger documentarion
+    After run the project, the documentation can be found as swagger documentarion
     
 ## Project Status
 * Features Finished:

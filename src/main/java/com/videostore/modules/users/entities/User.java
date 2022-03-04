@@ -40,6 +40,16 @@ public class User implements UserDetails {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
+    public User() {
+    }
+
+    public User(String name, String email, String password, Profile profile) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.profiles.add(profile);
+    }
+
     public UUID getId() {
         return id;
     }

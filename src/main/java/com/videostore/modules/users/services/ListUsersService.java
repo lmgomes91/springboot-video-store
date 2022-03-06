@@ -1,6 +1,5 @@
 package com.videostore.modules.users.services;
 
-import com.videostore.config.crypto.PasswordEncode;
 import com.videostore.modules.users.dtos.ResponseUserDto;
 import com.videostore.modules.users.entities.User;
 import com.videostore.modules.users.repositories.UserRepository;

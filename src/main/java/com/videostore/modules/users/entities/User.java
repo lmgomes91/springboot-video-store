@@ -94,6 +94,10 @@ public class User implements UserDetails {
         this.updatedAt = updatedAt;
     }
 
+    public List<Profile> getProfiles() {
+        return profiles;
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return this.profiles;

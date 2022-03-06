@@ -1,6 +1,6 @@
 package com.videostore.modules.users.services;
 
-import com.videostore.config.crypto.PasswordEncode;
+import com.videostore.config.crypto.PasswordEncodeService;
 import com.videostore.modules.users.dtos.CreateUserDto;
 import com.videostore.modules.users.dtos.ResponseUserDto;
 import com.videostore.modules.users.entities.Profile;
@@ -20,7 +20,7 @@ public class CreateUserService {
     @Autowired
     private ProfileRepository profileRepository;
     @Autowired
-    private PasswordEncode passwordEncode;
+    private PasswordEncodeService passwordEncodeService;
 
     public ResponseUserDto execute(CreateUserDto createUserDto) throws Exception {
         Optional<User> userExist = userRepository.findByEmail(createUserDto.getEmail());
@@ -33,7 +33,7 @@ public class CreateUserService {
             throw new Exception("Profile not found");
         }
 
-        String hashedPassword = passwordEncode.encoder(createUserDto.getPassword());
+        String hashedPassword = passwordEncodeService.encoder(createUserDto.getPassword());
 
         User user = userRepository.save(new User(createUserDto.getName(), createUserDto.getEmail(), hashedPassword, profile.get()));
 
